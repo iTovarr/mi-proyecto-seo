@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 
 const DynamicComponent = dynamic(() => import("../components/LargeComponent"), { ssr: false });
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mi Sitio Optimizado - Home</title>
+        <title>Mi Sitio Optimizado - Guía de SEO y rendimiento con Next.js</title>
         <meta name="description" content="Aprende sobre optimización SEO y rendimiento en Next.js." />
         <meta name="keywords" content="Next.js, SEO, optimización web" />
         <meta property="og:title" content="Mi Sitio Optimizado" />
@@ -25,6 +26,10 @@ export default function Home() {
         alt="Ejemplo de imagen optimizada"
         priority
       />
+      <nav style={{ margin: "16px 0" }}>
+        <Link href="/blog">Blog</Link> | <Link href="/contacto">Contacto</Link>
+      </nav>
+
       <DynamicComponent />
     </>
   );
